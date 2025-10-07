@@ -5,7 +5,7 @@ services:
     ports:
       - "8000:8000"
     env_file:
-      - .env  # 👉 carga tus variables de entorno
+      - .env  # carga tus variables de entorno
     volumes:
       # 🔹 Monta tu código local (ya lo tienes bien)
       - .:/app
