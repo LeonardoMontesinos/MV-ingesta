@@ -1,4 +1,4 @@
-# ---- Imagen base ----
+# ---- Imagen base -----
 FROM python:3.12-slim
 
 # ---- Variables de entorno ----
