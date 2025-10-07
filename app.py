@@ -81,7 +81,7 @@ def ingest_postgres():
             password=PG_PASSWORD,
             dbname=PG_DB
         )
-        print(f"[POSTGRES] ✅ Conectado a {PG_HOST}:{PG_PORT}")
+        print(f"[POSTGRES] Conectado a {PG_HOST}:{PG_PORT}")
         dfs = {
             "movies": pd.read_sql("SELECT * FROM movies;", conn),
             "showtimes": pd.read_sql("SELECT * FROM showtimes;", conn),
@@ -109,7 +109,7 @@ def ingest_mysql():
             password=MYSQL_PASSWORD,
             database=MYSQL_DB
         )
-        print(f"[MYSQL] ✅ Conectado a {MYSQL_HOST}:{MYSQL_PORT}")
+        print(f"[MYSQL] Conectado a {MYSQL_HOST}:{MYSQL_PORT}")
         df = pd.read_sql("SELECT * FROM users;", conn)
         conn.close()
 
@@ -129,7 +129,7 @@ def ingest_mongo():
         df = pd.DataFrame(docs)
         client.close()
 
-        print(f"[MONGO] ✅ Conectado a {MONGO_URI}")
+        print(f"[MONGO] Conectado a {MONGO_URI}")
         path, filename = write_csv(df, "bookings")
         s3_uri = upload_to_s3(path, S3_BUCKET, S3_BASE_PREFIX, "bookings", filename)
         return [{"source": "bookings", "rows": len(df), "s3_uri": s3_uri}]
@@ -146,7 +146,7 @@ def ingest_sqlite():
             "salas": pd.read_sql("SELECT * FROM salas;", conn),
         }
         conn.close()
-        print(f"[SQLITE] ✅ Leído desde {SQLITE_PATH}")
+        print(f"[SQLITE] Leído desde {SQLITE_PATH}")
 
         uploaded = []
         for name, df in dfs.items():
@@ -190,7 +190,7 @@ def upload_all():
         }
 
     except Exception as e:
-        print(f"❌ Error general: {e}")
+        print(f"Error general: {e}")
         raise HTTPException(status_code=500, detail={"error": str(e)})
 
 
