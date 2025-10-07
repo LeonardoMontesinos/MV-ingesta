@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+
+# Virtualenv
+.env
+.venv
+venv/
+env/
+
+# Docker
+*.pid
+*.log
+/data_ingesta/
+
+# AWS
+*.pem
+*.key
+
+# IDEs
+.vscode/
+.idea/
+

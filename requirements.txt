@@ -1,0 +1,17 @@
+fastapi
+uvicorn
+boto3
+psycopg2-binary
+mysql-connector-python
+pymongo
+sqlite-utils
+pandas
+numpy
+openpyxl
+pyarrow
+requests
+python-dateutil
+pydantic
+typing-extensions
+loguru
+sqlalchemy
