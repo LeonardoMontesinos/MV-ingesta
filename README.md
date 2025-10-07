@@ -80,17 +80,17 @@ Crea un archivo `.env` dentro de la carpeta raíz (`~/api-ingesta/.env`):
 ```env
 # AWS CONFIG
 AWS_REGION=us-east-1
-S3_BUCKET=ingestamvcinema
+S3_BUCKET=<S3BucketName>
 S3_BASE_PREFIX=raw/
 
 # PostgreSQL (Movies)
-POSTGRES_MOVIES_URL=postgresql://postgres:postgres@172.31.28.90:15432/moviesdb
+POSTGRES_MOVIES_URL=postgresql://postgres:postgres@<IP_PRIVADA>:15432/moviesdb
 
 # MySQL (Users)
-MYSQL_USERS_URL=mysql://usersuser:userspass@172.31.28.90:3307/usersdb
+MYSQL_USERS_URL=mysql://usersuser:userspass@<IP_PRIVADA>:3307/usersdb
 
 # MongoDB (Bookings)
-MONGO_URL=mongodb://172.31.28.90:27017/
+MONGO_URL=mongodb://<IP_PRIVADA>:27017/
 MONGO_DB=bookingsdb
 MONGO_COLLECTION=bookings
 
